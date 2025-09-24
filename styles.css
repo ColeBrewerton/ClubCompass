@@ -58,23 +58,30 @@ p {
   cursor: pointer;
   color: var(--color-text-light);
 
-  /* animated gradient background */
-  background: linear-gradient(135deg,
-    var(--color-navbar-dark),
-    var(--color-background-main),
-    var(--color-accent-green),
-    var(--color-accent-blue),
-    var(--color-background-light)
-  );
+  /* Multi-point radial gradient for more depth */
+  background: radial-gradient(circle at 20% 20%, var(--color-accent-blue) 0%, var(--color-navbar-dark) 40%, var(--color-background-main) 80%, var(--color-accent-green) 100%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 20s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background: radial-gradient(circle at 20% 20%, var(--color-accent-blue) 0%, var(--color-navbar-dark) 40%, var(--color-background-main) 80%, var(--color-accent-green) 100%);
+  }
+  25% {
+    background: radial-gradient(circle at 80% 10%, var(--color-background-main) 0%, var(--color-navbar-dark) 40%, var(--color-accent-blue) 80%, var(--color-accent-green) 100%);
+  }
+  50% {
+    background: radial-gradient(circle at 50% 80%, var(--color-navbar-dark) 0%, var(--color-background-main) 40%, var(--color-accent-green) 80%, var(--color-accent-blue) 100%);
+  }
+  75% {
+    background: radial-gradient(circle at 10% 50%, var(--color-background-main) 0%, var(--color-navbar-dark) 40%, var(--color-accent-green) 80%, var(--color-accent-blue) 100%);
+  }
+  100% {
+    background: radial-gradient(circle at 20% 20%, var(--color-accent-blue) 0%, var(--color-navbar-dark) 40%, var(--color-background-main) 80%, var(--color-accent-green) 100%);
+  }
 }
+
 
 .welcome-container {
   text-align: center;
