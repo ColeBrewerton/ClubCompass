@@ -195,9 +195,10 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 180px;                     /* fixed width for consistency */
+  width: 180px; /* fixed width for consistency */
   background-color: var(--color-background-light);
-  border-radius: 12px;
+  border: 3px solid var(--color-navbar-dark);  /* noticeable border */
+  border-radius: 16px;                         /* slightly rounder corners */
   padding: 1rem;
   box-sizing: border-box;
   text-align: center;
@@ -205,6 +206,9 @@ h1 {
   text-decoration: none;
   color: black;
   transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Shadow for depth */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Circular club images */
@@ -214,14 +218,14 @@ h1 {
   object-fit: cover;
   border-radius: 50%; /* circular */
   margin-bottom: 0.5rem;
-  border: 2px solid var(--color-accent-green);
+  border: 2px solid var(--color-navbar-dark);
 }
 
 .club-card p {
   margin: 0; 
   font-weight: 600;
   text-align: center;
-  color: black;
+  color: var(--color-navbar-dark);
 }
 
 
