@@ -1,0 +1,87 @@
+/* -------------------- */
+/* COLORS + FONTS       */
+/* -------------------- */
+:root {
+  /* FONTS */
+  --font-header: 'Poppins', sans-serif;
+  --font-subheader: 'Poppins', sans-serif;
+  --font-header2: 'Nunito Sans', sans-serif;
+  --font-paragraph: 'Nunito Sans', sans-serif;
+
+  /* COLORS */
+  --color-navbar-dark: #16353a;      /* nav bar / dark bg */
+  --color-background-main: #254f56;  /* main background */
+  --color-accent-green: #8adcb2;
+  --color-accent-blue: #93cef2;
+  --color-background-light: #e5f2f9;
+  --color-text-light: #ffffff;
+}
+
+/* -------------------- */
+/* TYPOGRAPHY           */
+/* -------------------- */
+h1 {
+  font-family: var(--font-header);
+  font-weight: 700; /* Poppins Bold */
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-family: var(--font-subheader);
+  font-weight: 600; /* Poppins SemiBold */
+  margin: 0.5rem 0;
+}
+
+h3 {
+  font-family: var(--font-header2);
+  font-weight: 600; /* Nunito Sans SemiBold */
+  margin: 0.5rem 0;
+}
+
+p {
+  font-family: var(--font-paragraph);
+  font-weight: 500; /* Nunito Sans Medium */
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+/* -------------------- */
+/* WELCOME SCREEN       */
+/* -------------------- */
+.welcome {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-text-light);
+
+  /* animated gradient background */
+  background: linear-gradient(135deg,
+    var(--color-navbar-dark),
+    var(--color-background-main),
+    var(--color-accent-green),
+    var(--color-accent-blue),
+    var(--color-background-light)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.welcome-container {
+  text-align: center;
+}
+
+.app-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}

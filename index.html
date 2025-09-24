@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Compass Kiosk - Welcome</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="welcome">
-  <div class="centered">
-    <h1>Welcome to Compass Kiosk</h1>
-    <button onclick="window.location.href='home.html'">Enter</button>
+<body class="welcome" onclick="window.location.href='home.html'">
+  <div class="welcome-container">
+    <img src="assets/app-icon.png" alt="Compass App Icon" class="app-icon">
+    <h1>Compass Kiosk</h1>
+    <h2>Tap anywhere to start</h2>
   </div>
 </body>
 </html>
