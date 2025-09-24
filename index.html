@@ -9,12 +9,240 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/png" href="images/Logo.png">
 </head>
-<body class="welcome" onclick="window.location.href='home.html'">
-  <div class="welcome-container">
-    <img src="assets/app-icon.png" alt="Compass App Icon" class="app-icon">
-    <h1>Compass Kiosk</h1>
-    <h2>Tap anywhere to start</h2>
+<body>
+  <!-- Welcome Screen -->
+  <div class="welcome" id="welcomeScreen">
+    <div class="welcome-container">
+      <img src="images/Logo.png" alt="Compass App Icon" class="app-icon animate-fade-slide">
+      <p class="subheader animate-fade-slide delay-0">Welcome To</p>
+      <h1 class="animate-fade-slide delay-1">Club Compass</h1>
+      <p class="subheader animate-fade-slide delay-2">Tap Anywhere</p>
+    </div>
   </div>
+
+  <!-- Clubs Screen -->
+  <div class="clubs-page" id="clubsScreen" style="display: none;">
+    <nav class="navbar">
+      <h1>Club Compass</h1>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+
+    <main class="clubs-container">
+        <div class="clubs-scroll">
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/Animal-Rights-Climate-Justice-logo-2025.png" alt="Animal Rights & Climate Justice">
+                <p>Animal Rights & Climate Justice</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/AriseLogo-2025.png" alt="ARISE">
+                <p>ARISE</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/Aisian-Law-Students-Association.png" alt="Asian Law Students’ Association">
+                <p>Asian Law Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/Beta-Alpha-Psi-quiz-Night.png" alt="Beta Alpha Psi">
+                <p>Beta Alpha Psi</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/06/chess-club-logo-25.png" alt="Chess Club">
+                <p>Chess Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Waikato-University-Christian-Club.png" alt="Christian Club">
+                <p>Christian Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/06/collective_logo_25.png" alt="Collective Uni Tauranga">
+                <p>Collective Uni Tauranga</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/04/CLC.jpg" alt="Conscious Living Collection">
+                <p>Conscious Living Collection</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/CS3.png" alt="CS3">
+                <p>CS3</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Greens-on-Campus.png" alt="Greens on Campus">
+                <p>Greens on Campus</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/04/JAMCLUBnormal-Oompa-pdf.jpg" alt="Jam Club">
+                <p>Jam Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/08/lexwahine.jpeg" alt="Lex Wāhine">
+                <p>Lex Wāhine</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Management-Communication-Students_-Association.png" alt="Management Communication Students’ Association">
+                <p>Management Communication Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/04/Maths-Logo-Final.png" alt="Mathematics and Co. Club MC2">
+                <p>Mathematics and Co. Club MC2</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/04/WMSA-2048x2048.webp" alt="Muslim Students Association">
+                <p>Muslim Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/08/LOGO-1-Kionalilly.J-Kalepo.png" alt="Pacific Ako Students Association">
+                <p>Pacific Ako Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/PIMSA-Logo.jpg" alt="Pacific Islander Management Students Association">
+                <p>Pacific Islander Management Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Pacific-Law-Students_-Association.jpg" alt="Pacific Law Students Association">
+                <p>Pacific Law Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/08/Papua-New-guinea.jpg" alt="Papua New Guinea Waikato Students Association">
+                <p>Papua New Guinea Waikato Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/PGSA.png" alt="PGSA Post Graduate Students Association">
+                <p>PGSA Post Graduate Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/STEM.jpg" alt="S.T.E.M Pacifika & Māori">
+                <p>S.T.E.M Pacifika & Māori</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/Singularity-2025.png" alt="Singularity">
+                <p>Singularity</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/SICWA-Solomon-Island-Students-Association.jpg" alt="Solomon Islands Community Waikato Association">
+                <p>Solomon Islands Community Waikato Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/329791836_5929908400434547_7785172355071125533_n.jpg" alt="Student Employees of Waikato University Association">
+                <p>Student Employees of Waikato University Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/StudentLifeLogo-2025.jpg" alt="Student Life">
+                <p>Student Life</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/08/SVAtauranga.webp" alt="Student Volunteer Army">
+                <p>Student Volunteer Army</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/358548393_799367165069779_7635762790330764906_n.jpg" alt="Te Kāuru">
+                <p>Te Kāuru</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/Te-Piringa.jpeg" alt="Te Piringa Law Students’ Association">
+                <p>Te Piringa Law Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src= "https://wsu.org.nz/wp-content/uploads/2024/05/TRN-logo-with-name.webp" alt="Te Ranga Ngaku">
+                <p>Te Ranga Ngaku</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/04/429687419_725683649631065_6182988390964050859_n.jpg" alt="Te Tini o Hakuturi">
+                <p>Te Tini o Hakuturi</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/464898268_18429719500075626_1024734524426906737_n.jpg" alt="Te Waiora">
+                <p>Te Waiora</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Te-Whakaiapo-WMLSA.jpg" alt="Te Whakahiapo">
+                <p>Te Whakahiapo</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/TSCF-logo.jpg" alt="Tertiary Students Christian Fellowship">
+                <p>Tertiary Students Christian Fellowship</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/TSCF-TGA-Logo-2025.png" alt="Tertiary Students Christian Fellowship (Tauranga)">
+                <p>Tertiary Students Christian Fellowship (Tauranga)</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Tumata-Kokiri.jpg" alt="Tumata Kokiri">
+                <p>Tumata Kokiri</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/UniQ-Logo.png" alt="UniQ">
+                <p>UniQ</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/Dance-Club-Logo-2025.jpg" alt="Unity Dance Club">
+                <p>Unity Dance Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/University-of-Waikato-Sailing-Club.png" alt="University of Waikato Sailing Club">
+                <p>University of Waikato Sailing Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/06/Logo.jpg" alt="University of Waikato Snow Sports">
+                <p>University of Waikato Snow Sports</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/03/Main-Logo-Black-1-UOW-Tennis-Club.png" alt="University of Waikato Tennis Club">
+                <p>University of Waikato Tennis Club</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Waicath-Logo-2048x720.jpg" alt="WaiCath">
+                <p>WaiCath</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/bangladesh-logo.jpg" alt="Waikato Bangladesh Students Association">
+                <p>Waikato Bangladesh Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2024/03/CsawLogoPic-saw-C-pdf.jpg" alt="Waikato Chinese Students Association">
+                <p>Waikato Chinese Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/Debating-logo.jpg" alt="Waikato Debating Society">
+                <p>Waikato Debating Society</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/03/Screenshot-2023-05-01-151305.png" alt="Waikato Disabled Students’ Association">
+                <p>Waikato Disabled Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/WMSSA-logo-2048x848.png" alt="Waikato Management School Students’ Association">
+                <p>Waikato Management School Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/WPSA-Logo-2048x1448.png" alt="Waikato Psychology Students’ Association">
+                <p>Waikato Psychology Students’ Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2025/05/wussa-logo.jpg" alt="Waikato Samoan Students Association">
+                <p>Waikato Samoan Students Association</p>
+            </a>
+            <a href="clubinfo.html" class="club-card">
+                <img src="https://wsu.org.nz/wp-content/uploads/2023/01/Waikato-Science-Club.png" alt="Waikato Science Club">
+                <p>Waikato Science Club</p>
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+      <p>&copy; 2025 Club Compass</p>
+    </footer>
+  </div>
+
+  <script src="transition.js"></script>
 </body>
 </html>
