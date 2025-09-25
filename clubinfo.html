@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Info - Club Compass</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/forma-djr-display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/png" href="images/LOGO.png">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="index.html"><img src="images/LOGO.png" alt="Club Compass Logo" class="navbar-logo"></a>
+    </div>
+    <h1 class="navbar-title">Club Compass</h1>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html"><img src="images/HomeIcon.png" alt="Home" class="nav-icon"></a>
+      </li>
+      <li>
+        <a href="map.html"><img src="images/MapIconWhite.png" alt="Map" class="nav-icon"></a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Club Info Main -->
+<main class="club-info-container">
+  <div class="club-info-card">
+    <!-- Image -->
+    <img src="images/green.jpg" alt="Animal Rights & Climate Justice" class="club-info-image">
+
+    <!-- Text content -->
+    <div class="club-info-content">
+      <!-- Back button in top right -->
+        <button id="backBtn" class="club-back-button">
+            <img src="images/backwhite.png" alt="Back" class="back-icon">
+        </button>
+
+        <script>
+        const backBtn = document.getElementById('backBtn');
+        backBtn.addEventListener('click', () => {
+        // Tell index.html to skip welcome
+        sessionStorage.setItem('skipWelcome', 'true');
+        
+        // Go back to index
+        window.location.href = 'index.html';
+        });
+        </script>
+
+
+      <h2>Animal Rights & Climate Justice</h2>
+        <p class="club-info-details">
+        <strong>Location:</strong> The Pa<br>
+        <strong>Meetings:</strong> Wednesdays at 5:30pm
+        </p>
+        <p class="club-info-description">
+        We take action in a variety of ways on campus to promote veganism and a plant-based food system for the sake of animals and the climate. This includes hosting educational events, workshops, and campaigns to raise awareness about animal welfare, environmental sustainability, and the benefits of plant-based living. We collaborate with students, local businesses, and organizations to create a supportive community, provide resources for transitioning to veganism, and advocate for systemic change. If you’re passionate about animal rights, climate justice, or simply want to learn more about sustainable food choices, don’t hesitate to reach out and get involved with our initiatives.
+        </p>
+
+      <!-- Map button -->
+      <button class="club-map-button" onclick="window.location.href='map.html'">
+    <img src="images/MapIconWhite.png" alt="Map Icon" class="map-button-icon">
+    <span class="map-button-text">See Location</span>
+</button>
+
+
+
+    </div>
+  </div>
+</main>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Club Compass - By Cole Brewerton</p>
+  </footer>
+
+</body>
+</html>
