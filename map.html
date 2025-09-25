@@ -54,7 +54,7 @@
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', () => {
       sessionStorage.setItem('skipWelcome', 'true');
-      window.location.href = 'clubinfo.html';
+       window.history.back();
     });
   </script>
 </body>
