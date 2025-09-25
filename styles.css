@@ -610,3 +610,12 @@ h1 {
 .map-overlay .club-back-button {
   pointer-events: auto;
 }
+
+/* Navbar and button icons sizing */
+.nav-icon,
+.button-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
