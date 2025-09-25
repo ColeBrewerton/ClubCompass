@@ -50,24 +50,11 @@
     <p>&copy; 2025 Club Compass - By Cole Brewerton</p>
   </footer>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const map = L.map('map').setView([-37.7877, 175.3210], 16);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
-      L.marker([-37.7877, 175.3210]).addTo(map)
-        .bindPopup('The Pā<br>University of Waikato<br>Hamilton, New Zealand')
-        .openPopup();
-    });
-  </script>
   <script>
     const backBtn = document.getElementById('backBtn');
     backBtn.addEventListener('click', () => {
       sessionStorage.setItem('skipWelcome', 'true');
-      window.location.href = 'index.html';
+      window.location.href = 'clubinfo.html';
     });
   </script>
 </body>
