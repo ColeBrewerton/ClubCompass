@@ -225,16 +225,6 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Container for the buttons at the bottom of the card */
-.club-card-buttons {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 /* Each button takes up half the width, side-by-side */
 .club-card .club-button {
   flex: 1 1 0;
@@ -309,6 +299,16 @@ h1 {
   display: block;            /* remove inline spacing issues */
 
   margin-top:6px;
+}
+
+/* Container for the buttons at the bottom of the card */
+.club-card-buttons {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: auto;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 
