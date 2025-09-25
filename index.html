@@ -790,7 +790,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Animate navbar
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.classList.add('animate-slide-down');
+  }
 
+  // Animate filters bar
+  const filtersMenu = document.querySelector('.filters-menu');
+  if (filtersMenu) {
+    filtersMenu.classList.add('animate-slide-down');
+  }
+
+});
+</script>
 
 
 </body>
