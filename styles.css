@@ -214,7 +214,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 180px;
+    width: 400px;
     background-color: var(--color-background-card);
     border: 3px solid var(--color-navbar-dark);
     border-radius: 16px;
