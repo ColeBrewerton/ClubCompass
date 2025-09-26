@@ -1,640 +1,643 @@
-/* -------------------- */
-/* VARIABLES            */
-/* -------------------- */
-:root {
-  --font-header: 'Forma DJR Display', sans-serif;
-  --font-subheader: 'Forma DJR Display', sans-serif;
-  --font-header2: 'Inter', sans-serif;
-  --font-paragraph: 'Inter', sans-serif;
+  /* -------------------- */
+  /* VARIABLES            */
+  /* -------------------- */
+  :root {
+  --font-header: "forma-djr-display", sans-serif;
+  --font-subheader: "forma-djr-display", sans-serif;
+    --font-header2: 'Inter', sans-serif;
+    --font-paragraph: 'Inter', sans-serif;
 
-  --color-navbar-dark: #122d31;
-  --color-background-main: #254f56;
-  --color-accent-green: #8adcb2;
-  --color-accent-blue: #93cef2;
-  --color-background-card: #1a3d43;;
-  --color-text-light: #e5f2f9;
-}
+    --color-navbar-dark: #122d31;
+    --color-background-main: #254f56;
+    --color-accent-green: #8adcb2;
+    --color-accent-blue: #93cef2;
+    --color-background-card: #1a3d43;;
+    --color-text-light: #e5f2f9;
+  }
 
-body, html {
-  height: 100%;
-  margin: 0;
-}
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Forma DJR Display', sans-serif;
-  background-color: var(--color-navbar-dark); /* your root bg color */
-  color: var(--color-text-light); /* your root text color */
-}
-
-main {
-  flex: 1; /* this pushes the footer to the bottom */
-}
-
-
-
-/* -------------------- */
-/* TYPOGRAPHY           */
-/* -------------------- */
-h1 {
-  font-family: var(--font-header);
-  font-weight: 700;
-  margin: 0;
-  font-size: 6rem;
-}
-
-.subheader {
-  font-family: var(--font-subheader);
-  font-weight: 600;
-  font-size: 2rem;
-  opacity: 0.9;
-  margin-top: 1rem;
-  margin-bottom: 0;
-}
-
-/* -------------------- */
-/* ANIMATIONS           */
-/* -------------------- */
-@keyframes fadeSlideIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-slide {
-  opacity: 0;
-  animation: fadeSlideIn 1s forwards;
-}
-
-.delay-0 { animation-delay: 0.3s; }
-.delay-1 { animation-delay: 0.8s; }
-.delay-2 { animation-delay: 1.3s; }
-
-/* -------------------- */
-/* WELCOME SCREEN       */
-/* -------------------- */
-.welcome {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  color: var(--color-text-light);
-
-  background: linear-gradient(135deg, #1a2a2f, #254f56, #1a2a2f);
-  background-size: 300% 300%;
-  animation: gradientLoop 15s ease infinite;
-}
-
-@keyframes gradientLoop {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.welcome-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-}
-
-.app-icon {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--color-text-light);
-  border-radius: 20%;
-  box-sizing: border-box;
-}
-
-/* -------------------- */
-/* CLUBS MAIN SCREEN    */
-/* -------------------- */
-.clubs-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  font-family: var(--font-paragraph);
-  color: var(--color-text-light);
-  background-color: var(--color-background-main);
-  overflow: hidden; /* prevents vertical scrolling */
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-navbar-dark);
-  position: relative; /* for centering title */
-  flex-shrink: 0;
-}
-
-/* Logo on the left */
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 10%;
-  object-fit: contain;
-}
-
-/* Centered title */
-.navbar-title {
-  font-family: var(--font-header);
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--color-text-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-/* Links on the right */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-}
-
-.nav-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; /* remove text underline */
-}
-
-.nav-links .nav-icon {
-    width: 28px;   /* adjust size */
-    height: 28px;
-    object-fit: contain;
-}
-
-
-
-/* Clubs container: horizontal scroll */
-.clubs-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  overflow-x: auto;    /* horizontal scrolling */
-  overflow-y: auto;  /* prevent vertical scrolling */
-  padding: 2rem;
-  scroll-behavior: smooth;
-}
-
-/* Clubs scroll grid: 2 rows horizontally scrollable */
-.clubs-scroll {
-  display: grid;
-  grid-auto-flow: column;           /* flow horizontally */
-  grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
-  gap: 2rem;                        /* gap between cards */
-  height: 100%;                     /* fill available height */
-}
-
-/* Club cards */
-.club-card {
-    position: relative; /* make the button positioning relative to the card */
+  body {
     display: flex;
     flex-direction: column;
+    font-family: 'Forma DJR Display', sans-serif;
+    background-color: var(--color-navbar-dark); /* your root bg color */
+    color: var(--color-text-light); /* your root text color */
+  }
+
+  main {
+    flex: 1; /* this pushes the footer to the bottom */
+  }
+
+
+
+  /* -------------------- */
+  /* TYPOGRAPHY           */
+  /* -------------------- */
+  h1 {
+    font-family: var(--font-header);
+    font-weight: 700;
+    margin: 0;
+    font-size: 6rem;
+  }
+
+  .subheader {
+    font-family: var(--font-subheader);
+    font-weight: 600;
+    font-size: 2rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* -------------------- */
+  /* ANIMATIONS           */
+  /* -------------------- */
+  @keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-slide {
+    opacity: 0;
+    animation: fadeSlideIn 1s forwards;
+  }
+
+  .delay-0 { animation-delay: 0.3s; }
+  .delay-1 { animation-delay: 0.8s; }
+  .delay-2 { animation-delay: 1.3s; }
+
+  /* -------------------- */
+  /* WELCOME SCREEN       */
+  /* -------------------- */
+  .welcome {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-    width: 400px;
-    background-color: var(--color-background-card);
-    border: 3px solid var(--color-navbar-dark);
-    border-radius: 16px;
-    padding: 1rem;
-    box-sizing: border-box;
     text-align: center;
     cursor: pointer;
     color: var(--color-text-light);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
 
-/* Each button takes up half the width, side-by-side */
-.club-card .club-button {
-  flex: 1 1 0;
-  max-width: 50%;
-  height: 40px;
-  background-color: var(--color-accent-green);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  line-height: 0;
-  margin: 0;
-}
+    background: linear-gradient(135deg, #1a2a2f, #254f56, #1a2a2f);
+    background-size: 300% 300%;
+    animation: gradientLoop 15s ease infinite;
+  }
 
-/* Circular club images */
-.club-card img {
-  width: 100px;       /* adjust as needed */
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%; /* circular */
-  margin-bottom: 0.5rem;
-  border: 2px solid var(--color-text-light);
-}
+  @keyframes gradientLoop {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-.club-card p {
-  margin: 0; 
-  font-weight: 300;
-  text-align: center;
-  color: var(--color-text-light);
-}
-
-.club-card h3 {
-  margin: 0.5rem 0 0.5rem 0; /* gap above and below the header */
-  font-family: var(--font-header2);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-accent-green);
-}
-
-.club-about {
-  font-family: var(--font-paragraph);
-  font-size: 0.85rem;
-  text-align: center;
-  margin-bottom: 1rem; /* space before button */
-  flex-grow: 1; /* takes remaining space so button sticks to bottom */
-}
-
-.club-button {
-  width: 100%;               /* full width of card */
-  height: 40px;              /* fixed height for consistency */
-  background-color: var(--color-accent-green);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-
-  display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-
-  padding: 0;                /* remove extra padding */
-  line-height: 0;            /* remove line height interference */
-}
-
-.club-button img {
-  width: 24px;               /* adjust size of icon */
-  height: 24px;
-  object-fit: contain;
-  border: none;
-  display: block;            /* remove inline spacing issues */
-
-  margin-top:6px;
-}
-
-/* Container for the buttons at the bottom of the card */
-.club-card-buttons {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-
-
-
-
-/* Footer */
-.footer {
-  flex-shrink: 0;
-  background-color: var(--color-navbar-dark);
-  color: var(--color-background-main);
-  text-align: center;
-  font-size: 0.6rem; 
-}
-
-
-/* -------------------- */
-/* Fade animations      */
-/* -------------------- */
-.fade-out {
-  animation: fadeOut 1s forwards;
-}
-
-.fade-in {
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-
-
-
-
-
-/* Filters menu */
-.filters-menu {
+  .welcome-container {
     display: flex;
-    gap: 1rem;
-    padding: 0.5rem 2rem;
-    background-color: #0f1f23; /* slightly darker than navbar */
-    position: sticky;          /* stick to top */
-    top: 60px;                 /* height of navbar */
-    z-index: 10;               /* stay above scrolling content */
-    flex-shrink: 0;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
 
-/* Filter buttons */
-.filter-btn {
+  .app-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--color-text-light);
+    border-radius: 20%;
+    box-sizing: border-box;
+  }
+
+  /* -------------------- */
+  /* CLUBS MAIN SCREEN    */
+  /* -------------------- */
+  .clubs-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: var(--font-paragraph);
+    color: var(--color-text-light);
+    background-color: var(--color-background-main);
+    overflow: hidden; /* prevents vertical scrolling */
+  }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
     background-color: var(--color-navbar-dark);
+    position: relative; /* for centering title */
+    flex-shrink: 0;
+  }
+
+  /* Logo on the left */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    object-fit: contain;
+  }
+
+  /* Centered title */
+  .navbar-title {
+    font-family: var(--font-header);
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  /* Links on the right */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .nav-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none; /* remove text underline */
+  }
+
+  .nav-links .nav-icon {
+      width: 28px;   /* adjust size */
+      height: 28px;
+      object-fit: contain;
+  }
+
+
+
+  /* Clubs container: horizontal scroll */
+  .clubs-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;    /* horizontal scrolling */
+    overflow-y: auto;  /* prevent vertical scrolling */
+    padding: 2rem;
+    scroll-behavior: smooth;
+  }
+
+  /* Clubs scroll grid: 2 rows horizontally scrollable */
+  .clubs-scroll {
+    display: grid;
+    grid-auto-flow: column;           /* flow horizontally */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows of equal height */
+    gap: 2rem;                        /* gap between cards */
+    height: 100%;                     /* fill available height */
+  }
+
+  /* Club cards */
+  .club-card {
+      position: relative; /* make the button positioning relative to the card */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 400px;
+      background-color: var(--color-background-card);
+      border: 3px solid var(--color-navbar-dark);
+      border-radius: 16px;
+      padding: 1rem;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      color: var(--color-text-light);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Each button takes up half the width, side-by-side */
+  .club-card .club-button {
+    flex: 1 1 0;
+    max-width: 50%;
+    height: 40px;
+    background-color: var(--color-accent-green);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    line-height: 0;
+    margin: 0;
+  }
+
+  /* Circular club images */
+  .club-card img {
+    width: 100px;       /* adjust as needed */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* circular */
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--color-text-light);
+  }
+
+  .club-card p {
+    margin: 0; 
+    font-weight: 300;
+    text-align: center;
+    color: var(--color-text-light);
+  }
+
+  .club-card h3 {
+    margin: 0.5rem 0 0.5rem 0; /* gap above and below the header */
+    font-family: var(--font-header2);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-accent-green);
+  }
+
+  .club-about {
+    font-family: var(--font-paragraph);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1rem; /* space before button */
+    flex-grow: 1; /* takes remaining space so button sticks to bottom */
+  }
+
+  .club-button {
+    width: 100%;               /* full width of card */
+    height: 40px;              /* fixed height for consistency */
+    background-color: var(--color-accent-green);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+
+    padding: 0;                /* remove extra padding */
+    line-height: 0;            /* remove line height interference */
+  }
+
+  .club-button img {
+    width: 24px;               /* adjust size of icon */
+    height: 24px;
+    object-fit: contain;
+    border: none;
+    display: block;            /* remove inline spacing issues */
+
+    margin-top:6px;
+  }
+
+  /* Container for the buttons at the bottom of the card */
+  .club-card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: auto;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+
+
+
+
+  /* Footer */
+  .footer {
+    flex-shrink: 0;
+    background-color: var(--color-navbar-dark);
+    color: var(--color-background-main);
+    text-align: center;
+    font-size: 0.6rem; 
+  }
+
+
+  /* -------------------- */
+  /* Fade animations      */
+  /* -------------------- */
+  .fade-out {
+    animation: fadeOut 1s forwards;
+  }
+
+  .fade-in {
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+
+
+
+
+
+  /* Filters menu */
+  .filters-menu {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 2rem;
+      background-color: #0f1f23; /* slightly darker than navbar */
+      position: sticky;          /* stick to top */
+      top: 60px;                 /* height of navbar */
+      z-index: 10;               /* stay above scrolling content */
+      flex-shrink: 0;
+  }
+
+  /* Filter buttons */
+  .filter-btn {
+      background-color: var(--color-navbar-dark);
+      color: var(--color-text-light);
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: var(--font-paragraph);
+      font-size: 0.9rem;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  .filter-btn.active {
+      background-color: var(--color-accent-green);
+      color: #122d31;
+  }
+
+
+
+
+
+
+
+
+  /* ---------------------- Big Club Info Card ---------------------- */
+
+  .club-info-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-background-main);
+  }
+
+  /* Container for the club info card */
+  .club-info-container {
+    flex: 1; /* take all remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* stretch child to fill container height */
+    background-color: var(--color-background-main);
+    overflow: hidden; /* no scrollbars from container */
+    padding: 2rem;
+    margin: 0;        /* remove margin */
+  }
+
+  /* Club info card fills the whole container */
+  .club-info-card {
+    display: flex;
+    flex-direction: row; /* image left, text right */
+    width: 100%;         /* full width */
+    height: 100%;        /* full height */
+    background-color: var(--color-background-card);
+    border: 3px solid var(--color-navbar-dark);
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: var(--color-text-light);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    overflow: auto;      /* scroll if content overflows */
+    margin: 0;           /* remove any default margin */
+    padding: 2rem;       /* optional inner padding */
+  }
+
+  /* Image on the left */
+  .club-info-card img {
+    width: 50%;         
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid var(--color-text-light);
+    margin-right: 2rem;
+  }
+
+  /* Text on the right */
+  .club-info-content {      
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 16px;
+    border: 2px solid var(--color-text-light);
+    padding: 1.25rem;
+  }
+
+  /* Club name/title */
+  .club-info-content h2 {
+    font-family: var(--font-header2);
+    font-size: 2rem;
+    color: var(--color-accent-green);
+    margin-bottom: 1rem;
+  }
+
+  /* Club description/text */
+  .club-info-content p {
+    font-family: var(--font-paragraph);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Back button inside club info card */
+  .club-back-button {
+    align-self: flex-end;       /* top right of content */
+    background-color: var(--color-accent-green);
     color: var(--color-text-light);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 0.5rem 1rem;
+    font-weight: 600;
     cursor: pointer;
-    font-family: var(--font-paragraph);
-    font-size: 0.9rem;
-    transition: background-color 0.3s, color 0.3s;
-}
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+  }
 
-
-.filter-btn.active {
+  .club-back-button:hover {
     background-color: var(--color-accent-green);
-    color: #122d31;
-}
+  }
+
+  /* Image adjustments */
+  .club-info-card img {
+    width: 50%;                 
+    height: 100%;               /* fill card height */
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid var(--color-text-light);
+    margin-right: 2rem;
+  }
+
+  /* Text content adjustments */
+  .club-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1; /* take remaining width */
+  }
+
+  /* Map button styling (same as general club buttons) */
+  .club-info-content .club-button {
+    margin-top: auto;           /* stick to bottom if needed */
+    width: fit-content;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-accent-green);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+  }
 
 
+  .club-back-button .back-icon {
+    width: 30px;               /* adjust size of icon */
+    height: 30px;
+    object-fit: contain;
+    border: none;
+    display: block;            /* remove inline spacing issues */
+    margin-right: 5px;
 
+  }
 
+  /* Full-width map button with icon + text */
+  .club-map-button {
+    width: 100%;               /* take full width of parent container */
+    padding: 0.6rem 1rem;      /* reduce vertical padding slightly */
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-accent-green);
+    display: flex;             /* flexbox for icon + text */
+    align-items: center;       /* vertical center */
+    justify-content: center;   /* horizontal center */
+    gap: 0rem;               /* smaller gap between icon and text */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
+  /* Icon inside map button */
+  .club-map-button .map-button-icon {
+    width: 24px;               /* fixed icon size */
+    height: 24px;
+    object-fit: contain;
+    border: none;              /* remove any inherited border */
+    display: block;
+    margin-right: 0.5rem;      /* space between icon and text */
+  }
 
+  /* Text inside map button */
+  .map-button-text {
+    font-family: var(--font-paragraph);
+    font-size: 1rem;          
+    color: var(--color-text-light);
+    font-weight: 400;
+    line-height: 1;            /* ensures vertical alignment with icon */
+  }
 
+  .club-info-description {
+    flex: 1;                   /* take all remaining space */
+    overflow-y: auto;          /* scroll if content overflows */
+    margin-bottom: 1rem;       /* space before button */
+      /* space on the right */
+  }
 
-/* ---------------------- Big Club Info Card ---------------------- */
+  .club-info-details {
+    font-family: var(--font-header2);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-accent-blue);
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    background: rgba(36, 79, 86, 0.3); /* subtle background */
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: inline-block;
 
-.club-info-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: var(--color-background-main);
-}
+  }
 
-/* Container for the club info card */
-.club-info-container {
-  flex: 1; /* take all remaining space */
-  display: flex;
-  justify-content: center;
-  align-items: stretch; /* stretch child to fill container height */
-  background-color: var(--color-background-main);
-  overflow: hidden; /* no scrollbars from container */
-  padding: 2rem;
-  margin: 0;        /* remove margin */
-}
+  /* Optional: Make the labels bold and more readable */
+  .club-info-details strong {
+    color: var(--color-accent-green);
+    font-weight: 600;
+  }
 
-/* Club info card fills the whole container */
-.club-info-card {
-  display: flex;
-  flex-direction: row; /* image left, text right */
-  width: 100%;         /* full width */
-  height: 100%;        /* full height */
-  background-color: var(--color-background-card);
-  border: 3px solid var(--color-navbar-dark);
-  border-radius: 16px;
-  box-sizing: border-box;
-  color: var(--color-text-light);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  overflow: auto;      /* scroll if content overflows */
-  margin: 0;           /* remove any default margin */
-  padding: 2rem;       /* optional inner padding */
-}
+  /* ...existing code... */
 
-/* Image on the left */
-.club-info-card img {
-  width: 50%;         
-  object-fit: cover;
-  border-radius: 16px;
-  border: 2px solid var(--color-text-light);
-  margin-right: 2rem;
-}
+  .club-info-content iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    border: 2px solid var(--color-text-light);
+    margin-bottom: 2rem;
+    display: block;
+  }
 
-/* Text on the right */
-.club-info-content {      
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+  /* Map content container */
+  .map-content {
+    position: relative;
+    padding: 0;
+    height: 100%;      /* Fill parent height */
+    min-height: 400px; /* Optional minimum */
+  }
 
-/* Club name/title */
-.club-info-content h2 {
-  font-family: var(--font-header2);
-  font-size: 2rem;
-  color: var(--color-accent-green);
-  margin-bottom: 1rem;
-}
+  .map-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;      /* Fill container height */
+    border-radius: 16px;
+    border: 2px solid var(--color-text-light);
+    z-index: 1;
+  }
 
-/* Club description/text */
-.club-info-content p {
-  font-family: var(--font-paragraph);
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-bottom: 1rem;
-}
+  /* ...existing code... */
+  .map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    pointer-events: none;
+  }
 
-/* Back button inside club info card */
-.club-back-button {
-  align-self: flex-end;       /* top right of content */
-  background-color: var(--color-accent-green);
-  color: var(--color-text-light);
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s;
-}
+  .map-overlay .club-back-button {
+    pointer-events: auto;
+  }
+  /* ...existing code... */
 
-.club-back-button:hover {
-  background-color: var(--color-accent-green);
-}
+  .map-overlay .club-back-button {
+    pointer-events: auto;
+  }
 
-/* Image adjustments */
-.club-info-card img {
-  width: 50%;                 
-  height: 100%;               /* fill card height */
-  object-fit: cover;
-  border-radius: 16px;
-  border: 2px solid var(--color-text-light);
-  margin-right: 2rem;
-}
-
-/* Text content adjustments */
-.club-info-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1; /* take remaining width */
-}
-
-/* Map button styling (same as general club buttons) */
-.club-info-content .club-button {
-  margin-top: auto;           /* stick to bottom if needed */
-  width: fit-content;
-  padding: 0.8rem 1.5rem;
-  background-color: var(--color-accent-green);
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-}
-
-
-.club-back-button .back-icon {
-  width: 30px;               /* adjust size of icon */
-  height: 30px;
-  object-fit: contain;
-  border: none;
-  display: block;            /* remove inline spacing issues */
-  margin-right: 5px;
-
-}
-
-/* Full-width map button with icon + text */
-.club-map-button {
-  width: 100%;               /* take full width of parent container */
-  padding: 0.6rem 1rem;      /* reduce vertical padding slightly */
-  border: none;
-  border-radius: 8px;
-  background-color: var(--color-accent-green);
-  display: flex;             /* flexbox for icon + text */
-  align-items: center;       /* vertical center */
-  justify-content: center;   /* horizontal center */
-  gap: 0rem;               /* smaller gap between icon and text */
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* Icon inside map button */
-.club-map-button .map-button-icon {
-  width: 24px;               /* fixed icon size */
-  height: 24px;
-  object-fit: contain;
-  border: none;              /* remove any inherited border */
-  display: block;
-  margin-right: 0.5rem;      /* space between icon and text */
-}
-
-/* Text inside map button */
-.map-button-text {
-  font-family: var(--font-paragraph);
-  font-size: 1rem;          
-  color: var(--color-text-light);
-  font-weight: 400;
-  line-height: 1;            /* ensures vertical alignment with icon */
-}
-
-.club-info-description {
-  flex: 1;                   /* take all remaining space */
-  overflow-y: auto;          /* scroll if content overflows */
-  margin-bottom: 1rem;       /* space before button */
-    /* space on the right */
-}
-
-.club-info-details {
-  font-family: var(--font-header2);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--color-accent-blue);
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-  background: rgba(36, 79, 86, 0.3); /* subtle background */
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  display: inline-block;
-
-}
-
-/* Optional: Make the labels bold and more readable */
-.club-info-details strong {
-  color: var(--color-accent-green);
-  font-weight: 600;
-}
-
-/* ...existing code... */
-
-.club-info-content iframe {
-  width: 100%;
-  height: 400px;
-  border-radius: 16px;
-  border: 2px solid var(--color-text-light);
-  margin-bottom: 2rem;
-  display: block;
-}
-
-/* Map content container */
-.map-content {
-  position: relative;
-  padding: 0;
-  height: 100%;      /* Fill parent height */
-  min-height: 400px; /* Optional minimum */
-}
-
-.map-content iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;      /* Fill container height */
-  border-radius: 16px;
-  border: 2px solid var(--color-text-light);
-  z-index: 1;
-}
-
-/* ...existing code... */
-.map-overlay {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.map-overlay .club-back-button {
-  pointer-events: auto;
-}
-/* ...existing code... */
-
-.map-overlay .club-back-button {
-  pointer-events: auto;
-}
-
-/* Navbar and button icons sizing */
-.nav-icon,
-.button-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  vertical-align: middle;
-}
+  /* Navbar and button icons sizing */
+  .nav-icon,
+  .button-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
