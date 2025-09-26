@@ -1,69 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Map - Club Compass</title>
-  <link rel="stylesheet" href="https://use.typekit.net/sge0bpt.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="images/LOGO.png">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Map - Club Compass</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sge0bpt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/LOGO.png">
 
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-        <a href="index.html">
-            <img src="images/LOGO.png" alt="Club Compass Logo" class="navbar-logo">
-        </a>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+          <a href="index.html">
+              <img src="images/LOGO.png" alt="Club Compass Logo" class="navbar-logo">
+          </a>
 
-        <a href="index.html" style="text-decoration:none; color:inherit;">
-        <h1 class="navbar-title">Club Compass</h1>
-    </a>
+          <a href="index.html" style="text-decoration:none; color:inherit;">
+          <h1 class="navbar-title">Club Compass</h1>
+      </a>
 
-        <ul class="nav-links">
-            <li>    
-        <a href="index.html">
-            <img src="images/HomeIcon.png" alt="Home" class="nav-icon">
-        </a>
-    </li>
-    <li>
-        <a href="map.html">
-            <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
-        </a>
-    </li>
-        </ul>
-    </nav>
+          <ul class="nav-links">
+              <li>    
+          <a href="index.html">
+              <img src="images/HomeIcon.png" alt="Home" class="nav-icon">
+          </a>
+      </li>
+      <li>
+          <a href="map.html">
+              <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
+          </a>
+      </li>
+          </ul>
+      </nav>
 
-  <!-- Main Container -->
-  <main class="club-info-container">
-    <div class="club-info-card-map">
-      <div class="club-info-content map-content">
-        <div class="map-overlay">
-          <button id="backBtn" class="club-back-button">
-            <img src="images/backwhite.png" alt="Back" class="back-icon">
-          </button>
+    <!-- Main Container -->
+    <main class="club-info-container">
+      <div class="club-info-card-map">
+        <div class="club-info-content map-content">
+          <div class="map-overlay">
+            <button id="backBtn" class="club-back-button">
+              <img src="images/backwhite.png" alt="Back" class="back-icon">
+            </button>
+          </div>
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=The+Pā,+University+of+Waikato,+Hamilton,+New+Zealand&output=embed&z=16&t=k">
+          </iframe>
         </div>
-        <iframe
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=The+Pā,+University+of+Waikato,+Hamilton,+New+Zealand&output=embed&z=18&t=k">
-        </iframe>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Club Compass - By Cole Brewerton</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Club Compass - By Cole Brewerton</p>
+    </footer>
 
-  <script>
-    const backBtn = document.getElementById('backBtn');
-    backBtn.addEventListener('click', () => {
-      sessionStorage.setItem('skipWelcome', 'true');
-       window.history.back();
-    });
-  </script>
-</body>
-</html>
+    <script>
+      const backBtn = document.getElementById('backBtn');
+      backBtn.addEventListener('click', () => {
+        sessionStorage.setItem('skipWelcome', 'true');
+        window.history.back();
+      });
+    </script>
+  </body>
+  </html>

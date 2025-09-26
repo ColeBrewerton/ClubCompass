@@ -372,17 +372,18 @@
   .filters-menu {
       display: flex;
       gap: 1rem;
-      padding: 1.5rem 3rem;
-      background-color: #0f1f23; /* slightly darker than navbar */
+      padding: 2rem 3rem;
+      padding-bottom: 0;
       position: sticky;          /* stick to top */
       top: 60px;                 /* height of navbar */
       z-index: 10;               /* stay above scrolling content */
       flex-shrink: 0;
+      
   }
 
   /* Filter buttons */
   .filter-btn {
-      background-color: var(--color-navbar-dark);
+      background-color: var(--color-background-card );
       color: var(--color-text-light);
       border: none;
       border-radius: 6px;
@@ -391,6 +392,9 @@
       font-family: var(--font-paragraph);
       font-size: 0.9rem;
       transition: background-color 0.3s, color 0.3s;
+          box-shadow: 
+  0 4px 6px rgba(0, 0, 0, 0.4),
+  0 12px 24px rgba(0, 0, 0, 0.6);
   }
 
 
@@ -667,3 +671,10 @@
     overflow: auto;      /* scroll if content overflows */
     margin: 0;           /* remove any default margin */
   }
+
+  .club-info-card iframe,
+.map-content iframe {
+  border: none;           /* remove default iframe border */
+  outline: none;          /* remove focus outline */
+  display: block;         /* prevent inline spacing issues */
+}
