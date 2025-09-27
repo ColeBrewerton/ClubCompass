@@ -215,30 +215,26 @@
 
 
   /* Club cards */
-  .club-card {
-      position: relative; /* make the button positioning relative to the card */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 400px;
-      height: auto;       /* let height fit content */
-      flex: 1 1 auto;      /* allow card to shrink/grow */
-      background-color: var(--color-background-card);
-      border-radius: 16px;
-      padding-left: 3rem;
-      padding-right: 3rem;
-      padding-top: 4rem;
-      padding-bottom: 0;
-      box-sizing: border-box;
-      text-align: center;
-      cursor: pointer;
-      color: var(--color-text-light);
-      box-shadow: 
-  0 4px 6px rgba(0, 0, 0, 0.4),
-  0 12px 24px rgba(0, 0, 0, 0.6);
-  
-  }
+.club-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center content vertically */
+    align-items: center;     /* center content horizontally */
+    width: 400px;
+    height: auto;            /* optional: can set a min-height if you want */
+    flex: 1 1 auto;
+    background-color: var(--color-background-card);
+    border-radius: 16px;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-text-light);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.4),
+        0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
 
   /* Each button takes up half the width, side-by-side */
   .club-card .club-button {
