@@ -27,9 +27,9 @@
           </a>
       </li>
       <li>
-          <a href="map.html">
-              <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
-          </a>
+          <a href="map.html" onclick="sessionStorage.setItem('fromNav','true')">
+  <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
+</a>
       </li>
           </ul>
       </nav>
@@ -43,12 +43,16 @@
               <img src="images/backwhite.png" alt="Back" class="back-icon">
             </button>
           </div>
-          <iframe
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=The+Pā,+University+of+Waikato,+Hamilton,+New+Zealand&output=embed&z=16&t=k">
-          </iframe>
+          <main class="map-container">
+  <iframe
+    id="googleMap"
+    width="100%"
+    height="100%"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+  ></iframe>
+</main>
         </div>
       </div>
     </main>
@@ -65,5 +69,29 @@
         window.history.back();
       });
     </script>
+
+
+
+
+
+<script>
+const iframe = document.getElementById('googleMap');
+
+// Default embed URLs
+const generalMap = "https://www.google.com/maps?q=University+of+Waikato,+Hamilton,+New+Zealand&output=embed&z=16&t=k";
+const paMap = "https://www.google.com/maps?q=The+Pā,+University+of+Waikato,+Hamilton,+New+Zealand&output=embed&z=16&t=k";
+
+// Check if opened from nav
+const fromNav = sessionStorage.getItem('fromNav') === 'true';
+
+if (fromNav) {
+  iframe.src = generalMap;
+  sessionStorage.removeItem('fromNav'); // reset
+} else {
+  iframe.src = paMap;
+}
+</script>
+
+
   </body>
   </html>

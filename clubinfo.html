@@ -32,9 +32,9 @@
         </a>
     </li>
     <li>
-        <a href="map.html">
-            <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
-        </a>
+        <a href="map.html" onclick="sessionStorage.setItem('fromNav','true')">
+  <img src="images/MapIconWhite.png" alt="Map" class="nav-icon">
+</a>
     </li>
         </ul>
     </nav>
@@ -45,10 +45,13 @@
     <!-- Image -->
     <!-- Image Carousel -->
 <!-- Image Carousel -->
+ <div class="club-info-carousel2">
 <div class="club-info-carousel">
-  <img src="images/trees.jpg" alt="Animal Rights & Climate Justice" class="club-info-image active">
-  <img src="images/trees.jpg" alt="Animal Rights & Climate Justice" class="club-info-image">
-  <img src="images/trees.jpg" alt="Animal Rights & Climate Justice" class="club-info-image">
+  <img src="images/blue.jpg" alt="Animal Rights & Climate Justice" class="club-info-image active">
+  <img src="images/climate.jpg" alt="Animal Rights & Climate Justice" class="club-info-image">
+  <img src="images/green.jpg" alt="Animal Rights & Climate Justice" class="club-info-image">
+  <img src="images/trees.jpg" alt="Animal Rights & Climate Justice" class="club-info-image ">
+
 
   <!-- Left & Right arrows -->
   <button class="carousel-arrow left">&#10094;</button>
@@ -59,7 +62,9 @@
     <span class="indicator active"></span>
     <span class="indicator"></span>
     <span class="indicator"></span>
+    <span class="indicator"></span>
   </div>
+</div>
 </div>
 
 
@@ -93,9 +98,10 @@
 
       <!-- Map button -->
       <button class="club-map-button" onclick="window.location.href='map.html'">
-    <img src="images/MapIconWhite.png" alt="Map Icon" class="map-button-icon">
-    <span class="map-button-text">See Location</span>
+  <img src="images/MapIconWhite.png" alt="Map Icon" class="map-button-icon">
+  <span class="map-button-text">See Location</span>
 </button>
+
 
 
 
@@ -121,7 +127,7 @@ function showImage(index) {
 // Automatic rotation
 let carouselInterval = setInterval(() => {
   showImage((current + 1) % images.length);
-}, 3000);
+}, 2000);
 
 // Arrow controls
 leftArrow.addEventListener('click', () => {
@@ -147,8 +153,9 @@ function resetInterval() {
   clearInterval(carouselInterval);
   carouselInterval = setInterval(() => {
     showImage((current + 1) % images.length);
-  }, 3000);
+  }, 2000);
 }
+
 </script>
 
 

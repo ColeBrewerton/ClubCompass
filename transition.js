@@ -2,27 +2,32 @@ const welcome = document.getElementById('welcomeScreen');
 const clubs = document.getElementById('clubsScreen');
 
 // Function to show clubs page immediately
-function showClubsPage() {
+function showClubsPage(animate = true) {
   welcome.style.display = 'none';
   clubs.style.display = 'flex';
-  clubs.classList.add('fade-in');
+
+  if (animate) {
+    clubs.classList.add('fade-in');
+  } else {
+    clubs.classList.remove('fade-in'); // Ensure no animation
+  }
 }
 
 // Check if user clicked back
 if (sessionStorage.getItem("skipWelcome") === "true") {
-  showClubsPage();
+  showClubsPage(false); // skip animation
   sessionStorage.removeItem("skipWelcome");
 } else {
   // Normal welcome screen click
   welcome.addEventListener('click', () => {
-    // Fade out welcome screen
     welcome.classList.add('fade-out');
 
     setTimeout(() => {
-      showClubsPage();
+      showClubsPage(); // default: animate
     }, 1000); // match fade animation duration
   });
 }
+
 
 // Club card interactions
 document.querySelectorAll('.club-card').forEach(card => {
