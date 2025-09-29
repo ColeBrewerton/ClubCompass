@@ -575,6 +575,7 @@
     flex: 1;                   /* take all remaining space */
     overflow-y: auto;          /* scroll if content overflows */
     margin-bottom: 1rem;       /* space before button */
+    font-size: 1rem;    
       /* space on the right */
   }
 
