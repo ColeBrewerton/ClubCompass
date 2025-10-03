@@ -220,10 +220,14 @@
     flex-direction: column;
     justify-content: center; /* center content vertically */
     align-items: center;     /* center content horizontally */
-    width: 400px;
+    width: 25vw;
     height: auto;            /* optional: can set a min-height if you want */
     flex: 1 1 auto;
-    background-color: var(--color-background-card);
+    background: linear-gradient(
+      to bottom,
+      var(--color-background-card),
+      color-mix(in srgb, var(--color-background-card) 80%, black)
+    );
     border-radius: 16px;
     padding: 2rem;
     box-sizing: border-box;
@@ -367,7 +371,7 @@
   /* Filters menu */
   .filters-menu {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       padding: 2rem 3rem;
       padding-bottom: 0;
       position: sticky;          /* stick to top */
@@ -380,6 +384,11 @@
   /* Filter buttons */
   .filter-btn {
       background-color: var(--color-background-card );
+      background: linear-gradient(
+      to bottom,
+      var(--color-background-card),
+      color-mix(in srgb, var(--color-background-card) 80%, black)
+    );
       color: var(--color-text-light);
       border: none;
       border-radius: 6px;
@@ -395,9 +404,13 @@
 
 
   .filter-btn.active {
-      background-color: var(--color-accent-green);
-      color: #122d31;
-  }
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent-green),
+    color-mix(in srgb, var(--color-accent-green) 70%, black)
+  );
+  color: #122d31;
+}
 
 
 
