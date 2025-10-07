@@ -260,8 +260,8 @@
 
   /* Circular club images */
   .club-card img {
-    width: 8vw;       /* adjust as needed */
-    height: 8vw;
+    width: 7vw;       /* adjust as needed */
+    height: 7vw;
     object-fit: cover;
     border-radius: 50%; /* circular */
     margin-bottom: 0.5rem;
