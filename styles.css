@@ -279,7 +279,7 @@
   .club-card h3 {
     margin: 0.5rem 0 0.5rem 0; /* gap above and below the header */
     font-family: var(--font-header);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-accent-green);
   }
@@ -478,7 +478,7 @@
   /* Club name/title */
   .club-info-content h2 {
     font-family: var(--font-header2);
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--color-accent-green);
     margin-bottom: 1rem;
   }
@@ -486,7 +486,7 @@
   /* Club description/text */
   .club-info-content p {
     font-family: var(--font-paragraph);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.5rem;
     margin-bottom: 1rem;  
   }
@@ -594,7 +594,7 @@
 
   .club-info-details {
     font-family: var(--font-header2);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: var(--color-accent-blue);
     margin-bottom: 1rem;
