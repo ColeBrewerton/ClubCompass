@@ -130,7 +130,7 @@ function showImage(index) {
 // Automatic rotation
 let carouselInterval = setInterval(() => {
   showImage((current + 1) % images.length);
-}, 2000);
+}, 4000);
 
 // Arrow controls
 leftArrow.addEventListener('click', () => {
@@ -156,7 +156,7 @@ function resetInterval() {
   clearInterval(carouselInterval);
   carouselInterval = setInterval(() => {
     showImage((current + 1) % images.length);
-  }, 4000);
+  }, 1000);
 }
 
 </script>
